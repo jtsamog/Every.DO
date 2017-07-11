@@ -31,7 +31,10 @@
   // Update the user interface for the detail item.
   if (self.detailItem) {
 //      self.detailDescriptionLabel.text = [self.detailItem description];
-    self.detailDescriptionLabel.text = [self.detailItem todoDescription];
+    
+    self.detailTitleLabel.text = self.detailItem.title;
+    self.detailDescriptionLabel.text = self.detailItem.todoDescription;
+    self.detailPriorityLabel.text = [NSNumber numberWithInt:self.detailItem.priorityNumber].stringValue;
 
   }
 }

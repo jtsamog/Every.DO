@@ -101,8 +101,6 @@
 
 //  NSDate *object = self.objects[indexPath.row];
 //  cell.textLabel.text = [object description];
-  
-  
   return cell;
 }
 
