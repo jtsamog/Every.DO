@@ -14,6 +14,7 @@
 		3015168D1F1551EB00D58D6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3015168B1F1551EB00D58D6E /* Main.storyboard */; };
 		3015168F1F1551EB00D58D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3015168E1F1551EB00D58D6E /* Assets.xcassets */; };
 		301516921F1551EB00D58D6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301516901F1551EB00D58D6E /* LaunchScreen.storyboard */; };
+		3015169B1F1557CC00D58D6E /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3015169A1F1557CC00D58D6E /* Todo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,8 @@
 		3015168E1F1551EB00D58D6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		301516911F1551EB00D58D6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		301516931F1551EB00D58D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301516991F1557CC00D58D6E /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		3015169A1F1557CC00D58D6E /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,16 +64,13 @@
 		3015167E1F1551EB00D58D6E /* Every.DO */ = {
 			isa = PBXGroup;
 			children = (
-				301516821F1551EB00D58D6E /* AppDelegate.h */,
-				301516831F1551EB00D58D6E /* AppDelegate.m */,
-				301516851F1551EB00D58D6E /* MasterViewController.h */,
-				301516861F1551EB00D58D6E /* MasterViewController.m */,
+				3015168B1F1551EB00D58D6E /* Main.storyboard */,
 				301516881F1551EB00D58D6E /* DetailViewController.h */,
 				301516891F1551EB00D58D6E /* DetailViewController.m */,
-				3015168B1F1551EB00D58D6E /* Main.storyboard */,
-				3015168E1F1551EB00D58D6E /* Assets.xcassets */,
-				301516901F1551EB00D58D6E /* LaunchScreen.storyboard */,
-				301516931F1551EB00D58D6E /* Info.plist */,
+				301516851F1551EB00D58D6E /* MasterViewController.h */,
+				301516861F1551EB00D58D6E /* MasterViewController.m */,
+				301516991F1557CC00D58D6E /* Todo.h */,
+				3015169A1F1557CC00D58D6E /* Todo.m */,
 				3015167F1F1551EB00D58D6E /* Supporting Files */,
 			);
 			path = Every.DO;
@@ -79,6 +79,11 @@
 		3015167F1F1551EB00D58D6E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				301516821F1551EB00D58D6E /* AppDelegate.h */,
+				301516831F1551EB00D58D6E /* AppDelegate.m */,
+				3015168E1F1551EB00D58D6E /* Assets.xcassets */,
+				301516901F1551EB00D58D6E /* LaunchScreen.storyboard */,
+				301516931F1551EB00D58D6E /* Info.plist */,
 				301516801F1551EB00D58D6E /* main.m */,
 			);
 			name = "Supporting Files";
@@ -156,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3015169B1F1557CC00D58D6E /* Todo.m in Sources */,
 				301516841F1551EB00D58D6E /* AppDelegate.m in Sources */,
 				301516871F1551EB00D58D6E /* MasterViewController.m in Sources */,
 				301516811F1551EB00D58D6E /* main.m in Sources */,
