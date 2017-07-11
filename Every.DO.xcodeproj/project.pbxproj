@@ -15,6 +15,7 @@
 		3015168F1F1551EB00D58D6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3015168E1F1551EB00D58D6E /* Assets.xcassets */; };
 		301516921F1551EB00D58D6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 301516901F1551EB00D58D6E /* LaunchScreen.storyboard */; };
 		3015169B1F1557CC00D58D6E /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 3015169A1F1557CC00D58D6E /* Todo.m */; };
+		3015169E1F155CE100D58D6E /* TodoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3015169D1F155CE100D58D6E /* TodoCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		301516931F1551EB00D58D6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		301516991F1557CC00D58D6E /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
 		3015169A1F1557CC00D58D6E /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		3015169C1F155CE100D58D6E /* TodoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoCell.h; sourceTree = "<group>"; };
+		3015169D1F155CE100D58D6E /* TodoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				3015168B1F1551EB00D58D6E /* Main.storyboard */,
 				301516881F1551EB00D58D6E /* DetailViewController.h */,
 				301516891F1551EB00D58D6E /* DetailViewController.m */,
+				3015169C1F155CE100D58D6E /* TodoCell.h */,
+				3015169D1F155CE100D58D6E /* TodoCell.m */,
 				301516851F1551EB00D58D6E /* MasterViewController.h */,
 				301516861F1551EB00D58D6E /* MasterViewController.m */,
 				301516991F1557CC00D58D6E /* Todo.h */,
@@ -164,6 +169,7 @@
 				3015169B1F1557CC00D58D6E /* Todo.m in Sources */,
 				301516841F1551EB00D58D6E /* AppDelegate.m in Sources */,
 				301516871F1551EB00D58D6E /* MasterViewController.m in Sources */,
+				3015169E1F155CE100D58D6E /* TodoCell.m in Sources */,
 				301516811F1551EB00D58D6E /* main.m in Sources */,
 				3015168A1F1551EB00D58D6E /* DetailViewController.m in Sources */,
 			);

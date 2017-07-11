@@ -9,6 +9,7 @@
 #import "MasterViewController.h"
 #import "DetailViewController.h"
 #import "Todo.h"
+#import "TodoCell.h"
 
 @interface MasterViewController ()
 
@@ -20,12 +21,14 @@
 
 
 - (void)createData {
-  Todo *t1 = [[Todo alloc] initWithTitle:@"Lecture1" Description:@"Lecture-iOS Dev" Priority:1];
-  Todo *t2 = [[Todo alloc] initWithTitle:@"Lecture2" Description:@"Lecture-iOS Dev" Priority:2];
-  Todo *t3 = [[Todo alloc] initWithTitle:@"Lecture3" Description:@"Lecture-iOS Dev" Priority:3];
-  Todo *t4 = [[Todo alloc] initWithTitle:@"Lecture4" Description:@"Lecture-iOS Dev" Priority:4];
+  Todo *t1 = [[Todo alloc] initWithTitle:@"Lecture1" Description:@"iOS Dev: Objective-C" Priority:1];
+  Todo *t2 = [[Todo alloc] initWithTitle:@"Lecture2" Description:@"iOS Dev: Swift" Priority:2];
+  Todo *t3 = [[Todo alloc] initWithTitle:@"Lecture3" Description:@"iOS Dev: Foundation" Priority:3];
+  Todo *t4 = [[Todo alloc] initWithTitle:@"Lecture4" Description:@"iOS Dev: Cocoa" Priority:4];
   
-  self.todos = @[t1, t2, t3, t4];
+//  self.todos = @[t1, t2, t3, t4];
+  self.objects = [@[t1, t2, t3, t4] mutableCopy];
+
 }
 
 
@@ -67,7 +70,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"showDetail"]) {
       NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-      NSDate *object = self.objects[indexPath.row];
+      Todo *object = self.objects[indexPath.row];
+//    NSDate *object = self.objects[indexPath.row];
       DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
       [controller setDetailItem:object];
   }
@@ -83,14 +87,22 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   return self.objects.count;
+//  return self.todos.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+  TodoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-  NSDate *object = self.objects[indexPath.row];
-  cell.textLabel.text = [object description];
+  Todo *todo = self.objects[indexPath.row];
+  cell.titleLabel.text = todo.title;
+  cell.todoDescriptionLabel.text = todo.todoDescription;
+  cell.priorityLabel.text = [NSNumber numberWithInt:todo.priorityNumber].stringValue;
+
+//  NSDate *object = self.objects[indexPath.row];
+//  cell.textLabel.text = [object description];
+  
+  
   return cell;
 }
 

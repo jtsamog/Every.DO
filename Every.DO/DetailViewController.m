@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "Todo.h"
 
 @interface DetailViewController ()
 
@@ -29,7 +30,9 @@
 - (void)configureView {
   // Update the user interface for the detail item.
   if (self.detailItem) {
-      self.detailDescriptionLabel.text = [self.detailItem description];
+//      self.detailDescriptionLabel.text = [self.detailItem description];
+    self.detailDescriptionLabel.text = [self.detailItem todoDescription];
+
   }
 }
 
