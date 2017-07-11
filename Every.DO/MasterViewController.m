@@ -8,17 +8,33 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "Todo.h"
 
 @interface MasterViewController ()
 
 @property NSMutableArray *objects;
+@property NSArray <Todo*>*todos;
 @end
 
 @implementation MasterViewController
 
+
+- (void)createData {
+  Todo *t1 = [[Todo alloc] initWithTitle:@"Lecture1" Description:@"Lecture-iOS Dev" Priority:1];
+  Todo *t2 = [[Todo alloc] initWithTitle:@"Lecture2" Description:@"Lecture-iOS Dev" Priority:2];
+  Todo *t3 = [[Todo alloc] initWithTitle:@"Lecture3" Description:@"Lecture-iOS Dev" Priority:3];
+  Todo *t4 = [[Todo alloc] initWithTitle:@"Lecture4" Description:@"Lecture-iOS Dev" Priority:4];
+  
+  self.todos = @[t1, t2, t3, t4];
+}
+
+
+
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
+  [self createData];
+  
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
