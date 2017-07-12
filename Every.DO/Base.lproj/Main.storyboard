@@ -168,25 +168,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title of Todo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heb-vq-Zbh">
-                                <rect key="frame" x="46" y="65" width="313" height="30"/>
+                                <rect key="frame" x="46" y="165" width="313" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description of Todo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5M-ET-XFv">
-                                <rect key="frame" x="46" y="135" width="313" height="30"/>
+                                <rect key="frame" x="46" y="235" width="313" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Priority number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-4g-NwY">
-                                <rect key="frame" x="46" y="205" width="313" height="30"/>
+                                <rect key="frame" x="46" y="305" width="313" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-xp-C4l">
-                                <rect key="frame" x="66" y="289" width="243" height="48"/>
+                                <rect key="frame" x="66" y="389" width="243" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
@@ -202,7 +202,7 @@
                             <constraint firstItem="NeX-4g-NwY" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="30" id="BPz-Pc-eND"/>
                             <constraint firstItem="NeX-4g-NwY" firstAttribute="top" secondItem="U5M-ET-XFv" secondAttribute="bottom" constant="40" id="DkI-6Q-5Ne"/>
                             <constraint firstItem="hlK-xp-C4l" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="50" id="FZk-84-Cc5"/>
-                            <constraint firstItem="mnJ-Rb-RB5" firstAttribute="top" secondItem="hlK-xp-C4l" secondAttribute="bottom" constant="330" id="RUf-n8-L4O"/>
+                            <constraint firstItem="mnJ-Rb-RB5" firstAttribute="top" secondItem="hlK-xp-C4l" secondAttribute="bottom" constant="230" id="RUf-n8-L4O"/>
                             <constraint firstItem="hlK-xp-C4l" firstAttribute="top" secondItem="NeX-4g-NwY" secondAttribute="bottom" constant="54" id="UZe-Ss-iew"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NeX-4g-NwY" secondAttribute="trailing" id="aKx-6V-vVV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hlK-xp-C4l" secondAttribute="trailing" constant="50" id="jpG-VK-FqZ"/>
