@@ -39,6 +39,10 @@
   self.objects = [[NSMutableArray alloc] init];
   [self createData];
   
+  
+  UISwipeGestureRecognizer *swipeToRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeToCompleteTodo:)];
+  [self.tableView addGestureRecognizer:swipeToRight];
+  
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
@@ -47,6 +51,8 @@
 
 
 - (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  [self.tableView reloadData];
 }
 
 
@@ -134,6 +140,32 @@
       [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
   } else if (editingStyle == UITableViewCellEditingStyleInsert) {
       // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+  }
+}
+
+
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+  if(sourceIndexPath != destinationIndexPath){
+    Todo *todoObject = [self.objects objectAtIndex:sourceIndexPath.row];
+    [self.objects removeObjectAtIndex:sourceIndexPath.row];
+    [self.objects insertObject:todoObject atIndex:destinationIndexPath.row];
+    [self.tableView reloadData];
+    
+  }
+}
+
+- (IBAction)swipeToCompleteTodo:(UISwipeGestureRecognizer *)sender {
+  CGPoint currentPoint = [sender locationInView:self.tableView];
+  NSIndexPath *index = [self.tableView indexPathForRowAtPoint:currentPoint];
+  NSIndexPath *lastindex = [NSIndexPath indexPathForRow:self.objects.count-1 inSection:0];
+  
+  if (sender.direction == UISwipeGestureRecognizerDirectionRight) {
+    Todo *markTodo = self.objects[index.row];
+    if (markTodo.isCompleted == NO) {
+      markTodo.isCompleted = YES;
+    }
+    [self tableView:self.tableView moveRowAtIndexPath:index toIndexPath:lastindex];
+    [self.tableView reloadData];
   }
 }
 

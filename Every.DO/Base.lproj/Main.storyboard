@@ -151,6 +151,7 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="K2Q-Sc-0WR"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
         </scene>
