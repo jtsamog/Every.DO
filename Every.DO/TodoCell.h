@@ -7,10 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Todo;
+
 
 @interface TodoCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *todoDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *todoDescriptionLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *priorityLabel;
+
+
+- (void)setToDo:(Todo *)toDo;
 
 @end
+
+

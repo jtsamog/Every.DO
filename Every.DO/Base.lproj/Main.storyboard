@@ -146,10 +146,78 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Master" id="Zdf-7t-Un8"/>
+                    <connections>
+                        <segue destination="MJM-7d-Ulk" kind="presentation" identifier="addItem" id="8jG-Oe-Pd1"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
+        </scene>
+        <!--Add Todo View Controller-->
+        <scene sceneID="Z0A-8J-Lsm">
+            <objects>
+                <viewController id="MJM-7d-Ulk" customClass="AddTodoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="djm-87-RQU"/>
+                        <viewControllerLayoutGuide type="bottom" id="mnJ-Rb-RB5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y8c-SB-amH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title of Todo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heb-vq-Zbh">
+                                <rect key="frame" x="46" y="65" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Description of Todo" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5M-ET-XFv">
+                                <rect key="frame" x="46" y="135" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Priority number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NeX-4g-NwY">
+                                <rect key="frame" x="46" y="205" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hlK-xp-C4l">
+                                <rect key="frame" x="66" y="289" width="243" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton:" destination="MJM-7d-Ulk" eventType="touchUpInside" id="6er-q8-D2c"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="heb-vq-Zbh" secondAttribute="trailing" id="8zJ-sw-fOB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="U5M-ET-XFv" secondAttribute="trailing" id="Afs-ct-Nx0"/>
+                            <constraint firstItem="U5M-ET-XFv" firstAttribute="top" secondItem="heb-vq-Zbh" secondAttribute="bottom" constant="40" id="ArK-bz-gtc"/>
+                            <constraint firstItem="NeX-4g-NwY" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="30" id="BPz-Pc-eND"/>
+                            <constraint firstItem="NeX-4g-NwY" firstAttribute="top" secondItem="U5M-ET-XFv" secondAttribute="bottom" constant="40" id="DkI-6Q-5Ne"/>
+                            <constraint firstItem="hlK-xp-C4l" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="50" id="FZk-84-Cc5"/>
+                            <constraint firstItem="mnJ-Rb-RB5" firstAttribute="top" secondItem="hlK-xp-C4l" secondAttribute="bottom" constant="330" id="RUf-n8-L4O"/>
+                            <constraint firstItem="hlK-xp-C4l" firstAttribute="top" secondItem="NeX-4g-NwY" secondAttribute="bottom" constant="54" id="UZe-Ss-iew"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NeX-4g-NwY" secondAttribute="trailing" id="aKx-6V-vVV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hlK-xp-C4l" secondAttribute="trailing" constant="50" id="jpG-VK-FqZ"/>
+                            <constraint firstItem="U5M-ET-XFv" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="30" id="jvx-8g-qmG"/>
+                            <constraint firstItem="heb-vq-Zbh" firstAttribute="leading" secondItem="Y8c-SB-amH" secondAttribute="leadingMargin" constant="30" id="pQP-gn-csc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="U5M-ET-XFv" id="b3s-5J-PCS"/>
+                        <outlet property="priorityTextField" destination="NeX-4g-NwY" id="fvf-lG-yUk"/>
+                        <outlet property="titleTextField" destination="heb-vq-Zbh" id="VmG-Qv-xq8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="457-qz-D7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="642" y="75"/>
         </scene>
     </scenes>
 </document>

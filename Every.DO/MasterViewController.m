@@ -10,8 +10,10 @@
 #import "DetailViewController.h"
 #import "Todo.h"
 #import "TodoCell.h"
+#import "AddTodoViewController.h"
 
 @interface MasterViewController ()
+@property Todo *todo;
 
 @property NSMutableArray *objects;
 @property NSArray <Todo*>*todos;
@@ -31,11 +33,10 @@
 
 }
 
-
-
 - (void)viewDidLoad {
   [super viewDidLoad];
   // Do any additional setup after loading the view, typically from a nib.
+  self.objects = [[NSMutableArray alloc] init];
   [self createData];
   
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
@@ -56,12 +57,25 @@
 
 
 - (void)insertNewObject:(id)sender {
-  if (!self.objects) {
-      self.objects = [[NSMutableArray alloc] init];
-  }
-  [self.objects insertObject:[NSDate date] atIndex:0];
-  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-  [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+  
+  [self performSegueWithIdentifier:@"addItem" sender:nil];
+  
+
+//  if (!self.objects) {
+//      self.objects = [[NSMutableArray alloc] init];
+//  }
+//  [self.objects insertObject:[NSDate date] atIndex:0];
+//  NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//  [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+}
+
+- (void)addNewToDoData:(Todo *)newTodoItem {
+  [self.objects addObject:newTodoItem];
+  [self.objects removeObject:newTodoItem];
+  [self.objects insertObject:newTodoItem atIndex:0];
+  [self.tableView reloadData];
+  
+//  [self.navigationController popViewControllerAnimated:true];
 }
 
 
@@ -70,10 +84,12 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
   if ([[segue identifier] isEqualToString:@"showDetail"]) {
       NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-      Todo *object = self.objects[indexPath.row];
-//    NSDate *object = self.objects[indexPath.row];
+      self.todo = self.objects[indexPath.row];
       DetailViewController *controller = (DetailViewController *)[segue destinationViewController];
-      [controller setDetailItem:object];
+      [controller setDetailItem:self.todo];
+  } else if ([segue.identifier isEqualToString:@"addItem"]) {
+    AddTodoViewController *avc = (AddTodoViewController *)[segue destinationViewController];
+    avc.todoDelegate = self;
   }
 }
 
@@ -94,13 +110,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   TodoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
 
-  Todo *todo = self.objects[indexPath.row];
-  cell.titleLabel.text = todo.title;
-  cell.todoDescriptionLabel.text = todo.todoDescription;
-  cell.priorityLabel.text = [NSNumber numberWithInt:todo.priorityNumber].stringValue;
-
-//  NSDate *object = self.objects[indexPath.row];
-//  cell.textLabel.text = [object description];
+//  Todo *todo = self.objects[indexPath.row];
+  
+  self.todo = self.objects[indexPath.row];
+  [cell setToDo:self.todo];
+  
+//  cell.titleLabel.text = todo.title;
+//  cell.todoDescriptionLabel.text = todo.todoDescription;
+//  cell.priorityLabel.text = [NSNumber numberWithInt:todo.priorityNumber].stringValue;
   return cell;
 }
 

@@ -15,6 +15,13 @@
 
 @implementation DetailViewController
 
+
+- (void)viewDidLoad {
+  [super viewDidLoad];
+  [self configureView];
+}
+
+
 #pragma mark - Managing the detail item
 
 - (void)setDetailItem:(id)newDetailItem {
@@ -37,13 +44,6 @@
     self.detailPriorityLabel.text = [NSNumber numberWithInt:self.detailItem.priorityNumber].stringValue;
 
   }
-}
-
-
-- (void)viewDidLoad {
-  [super viewDidLoad];
-  // Do any additional setup after loading the view, typically from a nib.
-  [self configureView];
 }
 
 
